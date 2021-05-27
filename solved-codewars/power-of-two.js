@@ -10,12 +10,26 @@ n = 2 ==> [1, 2, 4]  #[2 ^ 0, 2 ^ 1, 2 ^ 2]
 */
 
 function powersOfTwo(n) {
-    return n && !(n & (n - 1));
+    let arr = [];
+    for (let i = 0; i <= n; i++) {
+        arr.push(2 ** i);
+    }
+    return arr;
 }
 
-
+/*  ARBA
+function powersOfTwo(n) {
+    let arr = [];
+    for (let i = 0; i <= n; i++)
+        arr.push(i);
+    let mapArr = arr.map(function (number) {
+        return Math.pow(2, number);
+    });
+    return mapArr;
+}
+*/
 test("Example Tests", function () {
-    expect(powersOfTwo(0)).toBe([1]);
-    expect(powersOfTwo(1)).toBe([1, 2]);
-    expect(powersOfTwo(4)).toBe([1, 2, 4, 8, 16]);
+    expect(powersOfTwo(0)).toStrictEqual([1]);
+    expect(powersOfTwo(1)).toStrictEqual([1, 2]);
+    expect(powersOfTwo(4)).toStrictEqual([1, 2, 4, 8, 16]);
 });

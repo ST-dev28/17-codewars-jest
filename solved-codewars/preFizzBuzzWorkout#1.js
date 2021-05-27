@@ -9,30 +9,30 @@ input to the output.
 */
 
 function preFizz(n) {
-    if (n === 0) return [];
-    if (n >= 1)
-        return Array.from(Array(n + 1).keys()).slice(1);
-}
-
-/* ARBA
-function preFizz(n) {
     let arr = [];
-    for(let i = 1; i <= n; i++){
+    for (let i = 1; i <= n; i++) {
         arr.push(i);
     }
     return arr;
 }
 
+/*
+function preFizz(n) {
+    if (n === 0) return [];
+    if (n >= 1)
+        return Array.from(Array(n + 1).keys()).slice(1);
+}
+
 ----ARBA
 function preFizz(n) {
-  return Array.from({length: n}, (_, i) => i + 1);
+    return Array.from({ length: n }, (_, i) => i + 1);
 }
-*/
 
+*/
 test("new array", () => {
-    expect(preFizz(1)).toBe([1], `Array should be from 1 to 1`);
-    expect(preFizz(2)).toBe([1, 2], `Array should be from 1 to 2`);
-    expect(preFizz(3)).toBe([1, 2, 3], `Array should be from 1 to 3`);
-    expect(preFizz(4)).toBe([1, 2, 3, 4], `Array should be from 1 to 4`);
-    expect(preFizz(5)).toBe([1, 2, 3, 4, 5], `Array should be from 1 to 5`);
+    expect(preFizz(1)).toStrictEqual([1], `Array should be from 1 to 1`);
+    expect(preFizz(2)).toStrictEqual([1, 2], `Array should be from 1 to 2`);
+    expect(preFizz(3)).toStrictEqual([1, 2, 3], `Array should be from 1 to 3`);
+    expect(preFizz(4)).toStrictEqual([1, 2, 3, 4], `Array should be from 1 to 4`);
+    expect(preFizz(5)).toStrictEqual([1, 2, 3, 4, 5], `Array should be from 1 to 5`);
 });
