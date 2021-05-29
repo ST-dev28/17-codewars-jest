@@ -10,8 +10,8 @@ You should not remove or add elements from/to the array.
 */
 
 function twoSort(s) {
-    const sortAlph = s.sort((a, b) => a - b);
-    console.log(sortAlph);
+    return s.sort()[0].split('').join('***');
+
 }
 
 test("Basic tests", () => {
